@@ -1,10 +1,10 @@
 =pod
 
+Please see the main module in lib/OpusVL/Docker.pm for actual docs
+
 TODO:
 
 =over
-
-=item actually include all the files mentioned
 
 =item actually make this POD file out of the main module
 
