@@ -1,6 +1,6 @@
 package OpusVL::Docker;
 # ABSTRACT: Perl/docker utils by OpusVL
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 1;
 
 =head1 DESCRIPTION
