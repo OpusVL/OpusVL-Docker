@@ -1,0 +1,22 @@
+FROM <BASE PERL>
+MAINTAINER <YOU>
+
+ARG version
+RUN if [[ -z "$version" ]]; then \
+    echo "version not set; use --build-arg version=VERSION"; \
+    exit 1; fi
+
+USER root
+# You might want some global cpanm options
+#ENV PERL_CPANM_OPT='-M http://your-mirror.com --build-timeout 84000'
+
+RUN apt-get -y install all-your-system-deps
+
+COPY vendor/ /root/vendor
+RUN cpanm /root/vendor/*.tar.gz
+RUN rm -r /root/vendor/
+
+RUN cpanm <YOUR-RELEASED-APP>
+
+# Invent a user, but remember to use the same user at the end of the patch file
+USER <APPUSER>
