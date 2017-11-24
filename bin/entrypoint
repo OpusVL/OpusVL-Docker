@@ -44,7 +44,7 @@ if ($ENV{DEV_MODE}) {
     }
 }
 else {
-    @cmd = ($CONFIG{bin} . '/starman', qw( --server Martian --listen), ":$PORT");
+    @cmd = ($Config{bin} . '/starman', qw( --server Martian --listen), ":$PORT");
 
     if ($ENV{MEMORY_LIMIT}) {
         push @cmd, '--memory-limit', $ENV{MEMORY_LIMIT};
